@@ -1,0 +1,110 @@
+{
+    "python":[
+        {"type":"apt", "name":"python-dev"},
+        {"type":"apt", "name":"python3-dev"},
+        {"type":"apt", "name":"python-pip"},
+        {"type":"apt", "name":"python3-pip"}
+    ], 
+    "vim":[
+        {"type":"apt", "name":"vim"},
+        {"type":"apt", "name":"vim-nox"},
+        {"type":"apt", "name":"vim-gnome"},
+        {"type":"git", "name":"powerline/fonts", "cmds":"./install.sh"},
+        {"type":"git", "name":"VundleVim/Vundle.vim", "cmds":[
+            "vim +PluginInstall +qal",
+            "cd /home/adrian/.vim/bundle/YouCompleteMe",
+            "git submodule update --init --recursive",
+            "./install.py --clang-complete"
+        ]},
+        {"type":"git", "name":"Shougo/vimproc.vim", "dir":"/home/adrian/.vim/bundle", "cmds":"make"},
+        {"type":"apt", "name":"exuberant-ctags"},
+        {"type":"apt", "name":"clang"}
+    ],
+    "latex":[
+        {"type":"apt", "name":"texlive"},
+        {"type":"apt", "name":"texlive-extra-utils"},
+        {"type":"apt", "name":"texlive-math-extra"}
+    ],
+    "general-dev":[
+        {"type":"apt", "name":"build-essential"},
+        {"type":"apt", "name":"cmake"}
+    ],
+    "zsh":[
+        {"type":"apt", "name":"zsh"},
+        {"type":"custom", "name":"oh-my-zsh", "cmds":"sh -c \"$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\""},
+        {"type":"git", "name":"zsh-users/zsh-syntax-highlighting"}
+    ],
+    "ranger":[
+        {"type":"git", "name":"hut/ranger", "cmds":[
+            "sudo make install",
+            "sudo python setup.py install --optimize=1 --record=log.txt"
+        ]},
+        {"type":"apt", "name":"w3m"},
+        {"type":"apt", "name":"w3m-img"},
+        {"type":"apt", "name":"highlight"},
+        {"type":"apt", "name":"atool"},
+        {"type":"apt", "name":"ffmpegthumbnailer"},
+        {"type":"apt", "name":"mediainfo"}
+    ],
+    "xonsh":[
+        {"type":"pip", "name":"xonsh"},
+        {"type":"pip", "name":"prompt-toolkit"},
+        {"type":"pip", "name":"pygments"}
+    ],
+    "desktop-env":[
+        {"type":"apt", "name":"python-dbus"},
+        {"type":"apt", "name":"xbacklight"},
+        {"type":"apt", "name":"xsel"},
+        [
+            {"type":"apt", "name":"i3"},
+            {"type":"pip", "name":"i3-py"},
+            {"type":"custom", "name":"i3-status", "cmds":[
+                "cd /home/adrian/Downloads",
+                "wget https://launchpad.net/ubuntu/+archive/primary/+files/i3status_2.9-2_amd64.deb",
+                "sudo dpkg -i i3status_2.9-2_amd64.deb"
+            ]}
+        ],
+        {"type":"apt", "name":"rxvt-unicode-256color"},
+        {"type":"apt", "name":"arandr"},
+        [
+            {"type":"apt", "name":"touchegg"},
+            {"type":"custom", "name":"touchpad-settings", "cmds":[
+                "synclient TapButton2=0",
+                "synclient TapButton3=0",
+                "synclient ClickFinger2=0",
+                "synclient ClickFinger3=0",
+                "synclient HorizTwoFingerScroll=0",
+                "synclient VertTwoFingerScroll=1"
+            ]}
+        ],
+        {"type":"git", "name":"AdGold/IRSerial"},
+        {"type":"git", "name":"AdGold/dotfiles", "cmds":"./makesymlinks.sh"}
+    ],
+    "redshift":{"type":"apt", "name":"redshift"},
+    "7z":[
+        {"type":"apt", "name":"p7zip-full"},
+        {"type":"apt", "name":"p7zip-rar"}
+    ],
+    "vlc":{"type":"apt", "name":"vlc"},
+    "tmux":{"type":"git", "name":"tmux/tmux", "cmds":[
+            "cd tmux",
+            "sh autogen.sh",
+            "./configure && make"
+        ]},
+    "pcmanfm":{"type":"apt", "name":"pcmanfm"},
+    "htop":{"type":"apt", "name":"htop"},
+    "sublime":{"type":"apt", "name":"sublime-text-installer", "repository":"ppa:webupd8team/sublime-text-3"},
+    "chromium":{"type":"apt", "name":"chromium-browser"},
+    "ghc":{"type":"apt", "name":"ghc", "repository":"ppa:hvr/ghv"},
+    "git":{"type":"apt", "name":"git"},
+    "dropbox":{
+        "type":"apt",
+        "name":"dropbox",
+        "repository":"deb http://linux.dropbox.com/ubuntu $(lsb_release -sc) main",
+        "key":"--keyserver pgp.mit.edu --recv-keys 5044912E"
+    },
+    "mplayer":{"type":"apt", "name":"mplayer"},
+    "mumble":{"type":"apt", "name":"mumble"},
+    "openvpn":{"type":"apt", "name":"openvpn"},
+    "skype":{"type":"apt", "name":"skype", "repository":"deb http://archive.canonical.com/ $(lsb_release -sc) partner"}
+}
