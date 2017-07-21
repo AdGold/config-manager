@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 
+import glob
 from base import *
 
 
 class AptPackage(BasePackage):
     def __init__(self, name, repository='', key=''):
         super().__init__(name)
-        self.repository = repository
+        release = run('lsb_release -sc')
+        self.repository = repository.replace('%RELEASE%', release)
         self.key = key
 
     def check_installed(self):
@@ -20,12 +22,15 @@ class AptPackage(BasePackage):
         if self.key:
             run(['sudo', 'apt-key', 'adv'] + self.key.split())
         if self.repository:
-            added = run(['ls', '-r', '/etc/apt/**/*.list'])
+            added = glob.glob('/etc/apt/**/*.list')
             if any(self.name in f for f in added):
                 pass
             else:
                 run(['sudo', 'apt-add-repository', '-y', self.repository])
-                run(['sudo', 'apt-get', 'update'])
+                try:
+                    run(['sudo', 'apt-get', 'update'])
+                except:
+                    pass
 
     def do_install(self):
         self.do_repository_add()
