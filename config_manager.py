@@ -2,6 +2,7 @@
 
 import json
 import sys
+import os
 
 from base import BasePackage
 from git_package import GitPackage
@@ -42,6 +43,8 @@ def install(d, depth=0):
 config = json.load(open(sys.argv[1]))
 
 packages = parse(config)
+
+os.system('sudo sed -i.bak "/^# deb .*partner/ s/^# //" /etc/apt/sources.list')
 
 install(packages)
 print('Failed packages')
