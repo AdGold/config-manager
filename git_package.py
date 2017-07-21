@@ -7,7 +7,7 @@ git = AptPackage('git')
 
 
 class GitPackage(BasePackage):
-    GIT_CLONE_DIR = '/home/adrian/git_installs'
+    GIT_CLONE_DIR = '/home/adrian/.git_installs'
     def __init__(self, name, cmds=[], dir=''):
         self.user, sname = name.split('/')
         super().__init__(sname)
@@ -33,8 +33,11 @@ class GitPackage(BasePackage):
         if not git.check_installed():
             git.install()
         os.chdir(self.full_path)
+        curr_hash = run('git rev-parse HEAD')
         run(['git', 'pull'])
-        self.do_install_cmds()
+        new_hash = run('git rev-parse HEAD')
+        if curr_hash != new_hash:
+            self.do_install_cmds()
 
     def do_install_cmds(self):
         for cmd in self.install_cmds:
