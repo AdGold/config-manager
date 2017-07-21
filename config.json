@@ -7,10 +7,9 @@
     ], 
     "vim":[
         {"type":"apt", "name":"vim"},
-        {"type":"apt", "name":"vim-nox"},
         {"type":"apt", "name":"vim-gnome"},
         {"type":"git", "name":"powerline/fonts", "cmds":"./install.sh"},
-        {"type":"git", "name":"VundleVim/Vundle.vim", "cmds":[
+        {"type":"git", "name":"VundleVim/Vundle.vim", "dir":"/home/adrian/.vim/bundle", "cmds":[
             "vim +PluginInstall +qal",
             "cd /home/adrian/.vim/bundle/YouCompleteMe",
             "git submodule update --init --recursive",
@@ -31,7 +30,6 @@
     ],
     "zsh":[
         {"type":"apt", "name":"zsh"},
-        {"type":"custom", "name":"oh-my-zsh", "cmds":"sh -c \"$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\""},
         {"type":"git", "name":"zsh-users/zsh-syntax-highlighting"}
     ],
     "ranger":[
@@ -46,24 +44,8 @@
         {"type":"apt", "name":"ffmpegthumbnailer"},
         {"type":"apt", "name":"mediainfo"}
     ],
-    "xonsh":[
-        {"type":"pip", "name":"xonsh"},
-        {"type":"pip", "name":"prompt-toolkit"},
-        {"type":"pip", "name":"pygments"}
-    ],
     "desktop-env":[
-        {"type":"apt", "name":"python-dbus"},
-        {"type":"apt", "name":"xbacklight"},
         {"type":"apt", "name":"xsel"},
-        [
-            {"type":"apt", "name":"i3"},
-            {"type":"pip", "name":"i3-py"},
-            {"type":"custom", "name":"i3-status", "cmds":[
-                "cd /home/adrian/Downloads",
-                "wget https://launchpad.net/ubuntu/+archive/primary/+files/i3status_2.9-2_amd64.deb",
-                "sudo dpkg -i i3status_2.9-2_amd64.deb"
-            ]}
-        ],
         {"type":"apt", "name":"rxvt-unicode-256color"},
         {"type":"apt", "name":"arandr"},
         [
@@ -87,24 +69,19 @@
     ],
     "vlc":{"type":"apt", "name":"vlc"},
     "tmux":{"type":"git", "name":"tmux/tmux", "cmds":[
-            "cd tmux",
             "sh autogen.sh",
             "./configure && make"
         ]},
-    "pcmanfm":{"type":"apt", "name":"pcmanfm"},
     "htop":{"type":"apt", "name":"htop"},
     "sublime":{"type":"apt", "name":"sublime-text-installer", "repository":"ppa:webupd8team/sublime-text-3"},
     "chromium":{"type":"apt", "name":"chromium-browser"},
-    "ghc":{"type":"apt", "name":"ghc", "repository":"ppa:hvr/ghv"},
     "git":{"type":"apt", "name":"git"},
-    "dropbox":{
-        "type":"apt",
-        "name":"dropbox",
-        "repository":"deb http://linux.dropbox.com/ubuntu $(lsb_release -sc) main",
-        "key":"--keyserver pgp.mit.edu --recv-keys 5044912E"
-    },
+    "dropbox":{ "type":"apt", "name":"nautilus-dropbox"},
     "mplayer":{"type":"apt", "name":"mplayer"},
-    "mumble":{"type":"apt", "name":"mumble"},
     "openvpn":{"type":"apt", "name":"openvpn"},
-    "skype":{"type":"apt", "name":"skype", "repository":"deb http://archive.canonical.com/ $(lsb_release -sc) partner"}
+    "skype":{"type":"custom", "name":"skype", "cmds":[
+        "cd /home/adrian/Downloads",
+        "wget https://go.skype.com/linux.deb",
+        "sudo dpkg -i linux.deb"
+    ]}
 }
