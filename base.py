@@ -13,7 +13,7 @@ def run(cmd, *args, **kwargs):
         return ''
     else:
         #  kwargs['stderr'] = STDOUT
-        return check_output(cmd, *args, **kwargs)
+        return check_output(cmd, *args, **kwargs).decode('utf8')
 
 class BasePackage:
     def __init__(self, name):
