@@ -12,7 +12,7 @@ class GitPackage(BasePackage):
         self.user, sname = name.split('/')
         super().__init__(sname)
         self.url = 'https://github.com/%s.git' % name
-        self.url = 'git@github.com:%s.git' % name
+        # self.url = 'git@github.com:%s.git' % name
         self.install_dir = dir or self.GIT_CLONE_DIR
         self.full_path = os.path.join(self.install_dir, self.name)
         self.install_cmds = cmds if isinstance(cmds, list) else [cmds]
