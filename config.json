@@ -80,6 +80,7 @@
     "dropbox":{ "type":"apt", "name":"nautilus-dropbox"},
     "mplayer":{"type":"apt", "name":"mplayer"},
     "openvpn":{"type":"apt", "name":"openvpn"},
+    "keepass":{"type":"apt", "name":"keepassx"},
     "skype":{"type":"custom", "name":"skype", "cmds":[
         "cd /home/adrian/Downloads",
         "wget https://go.skype.com/linux.deb",
