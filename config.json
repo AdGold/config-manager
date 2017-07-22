@@ -9,15 +9,15 @@
         {"type":"apt", "name":"vim"},
         {"type":"apt", "name":"vim-gnome"},
         {"type":"git", "name":"powerline/fonts", "cmds":"./install.sh"},
+        {"type":"git", "name":"Shougo/vimproc.vim", "dir":"/home/adrian/.vim/bundle", "cmds":"make"},
+        {"type":"apt", "name":"exuberant-ctags"},
+        {"type":"apt", "name":"clang"},
         {"type":"git", "name":"VundleVim/Vundle.vim", "dir":"/home/adrian/.vim/bundle", "cmds":[
             "vim +PluginInstall +qal",
             "cd /home/adrian/.vim/bundle/YouCompleteMe",
             "git submodule update --init --recursive",
             "./install.py --clang-complete"
-        ]},
-        {"type":"git", "name":"Shougo/vimproc.vim", "dir":"/home/adrian/.vim/bundle", "cmds":"make"},
-        {"type":"apt", "name":"exuberant-ctags"},
-        {"type":"apt", "name":"clang"}
+        ]}
     ],
     "latex":[
         {"type":"apt", "name":"texlive"},
@@ -31,7 +31,7 @@
     "zsh":[
         {"type":"apt", "name":"zsh"},
         {"type":"git", "name":"zsh-users/zsh-syntax-highlighting"},
-        {"type":"git", "name":"bhilburn/powerlevel9k", "dir":"~/.oh-my-zsh/custom/themes"}
+        {"type":"git", "name":"bhilburn/powerlevel9k", "dir":"/home/adrian/.oh-my-zsh/themes"}
     ],
     "ranger":[
         {"type":"git", "name":"hut/ranger", "cmds":[
