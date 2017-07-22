@@ -30,7 +30,7 @@
     ],
     "zsh":[
         {"type":"apt", "name":"zsh"},
-        {"type":"git", "name":"zsh-users/zsh-syntax-highlighting"}
+        {"type":"git", "name":"zsh-users/zsh-syntax-highlighting"},
         {"type":"git", "name":"bhilburn/powerlevel9k", "dir":"~/.oh-my-zsh/custom/themes"}
     ],
     "ranger":[
