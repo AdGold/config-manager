@@ -78,6 +78,7 @@
     "chromium":{"type":"apt", "name":"chromium-browser"},
     "git":{"type":"apt", "name":"git"},
     "dropbox":{ "type":"apt", "name":"nautilus-dropbox"},
+    "zathura":{ "type":"apt", "name":"zathura"},
     "mplayer":{"type":"apt", "name":"mplayer"},
     "openvpn":{"type":"apt", "name":"openvpn"},
     "keepass":{"type":"apt", "name":"keepassx"},
