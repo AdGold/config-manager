@@ -21,8 +21,7 @@
     ],
     "latex":[
         {"type":"apt", "name":"texlive"},
-        {"type":"apt", "name":"texlive-extra-utils"},
-        {"type":"apt", "name":"texlive-math-extra"}
+        {"type":"apt", "name":"texlive-extra-utils"}
     ],
     "general-dev":[
         {"type":"apt", "name":"build-essential"},
