@@ -46,24 +46,10 @@
         {"type":"apt", "name":"mediainfo"}
     ],
     "desktop-env":[
-        {"type":"apt", "name":"xsel"},
         {"type":"apt", "name":"rxvt-unicode-256color"},
-        {"type":"apt", "name":"arandr"},
-        [
-            {"type":"apt", "name":"touchegg"},
-            {"type":"custom", "name":"touchpad-settings", "cmds":[
-                "synclient TapButton2=0",
-                "synclient TapButton3=0",
-                "synclient ClickFinger2=0",
-                "synclient ClickFinger3=0",
-                "synclient HorizTwoFingerScroll=0",
-                "synclient VertTwoFingerScroll=1"
-            ]}
-        ],
         {"type":"git", "name":"AdGold/IRSerial"},
         {"type":"git", "name":"AdGold/dotfiles", "cmds":"./makesymlinks.sh"}
     ],
-    "redshift":{"type":"apt", "name":"redshift"},
     "7z":[
         {"type":"apt", "name":"p7zip-full"},
         {"type":"apt", "name":"p7zip-rar"}
@@ -74,17 +60,11 @@
             "./configure && make"
         ]},
     "htop":{"type":"apt", "name":"htop"},
-    "sublime":{"type":"apt", "name":"sublime-text-installer", "repository":"ppa:webupd8team/sublime-text-3"},
     "chromium":{"type":"apt", "name":"chromium-browser"},
     "git":{"type":"apt", "name":"git"},
     "dropbox":{ "type":"apt", "name":"nautilus-dropbox"},
     "zathura":{ "type":"apt", "name":"zathura"},
     "mplayer":{"type":"apt", "name":"mplayer"},
     "openvpn":{"type":"apt", "name":"openvpn"},
-    "keepass":{"type":"apt", "name":"keepassx"},
-    "skype":{"type":"custom", "name":"skype", "cmds":[
-        "cd /home/adrian/Downloads",
-        "wget https://go.skype.com/linux.deb",
-        "sudo dpkg -i linux.deb"
-    ]}
+    "keepass":{"type":"apt", "name":"keepassx"}
 }
