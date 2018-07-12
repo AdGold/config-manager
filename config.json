@@ -54,10 +54,18 @@
         {"type":"apt", "name":"p7zip-rar"}
     ],
     "vlc":{"type":"apt", "name":"vlc"},
-    "tmux":{"type":"git", "name":"tmux/tmux", "cmds":[
+    "tmux":[
+        {"type":"apt", "name":"automake"},
+        {"type":"apt", "name":"autotools-dev"},
+        {"type":"apt", "name":"libevent-dev"},
+        {"type":"apt", "name":"pkg-config"},
+        {"type":"apt", "name":"libncurses5-dev"},
+        {"type":"git", "name":"tmux/tmux", "cmds":[
             "sh autogen.sh",
-            "./configure && make"
-        ]},
+            "./configure && make",
+            "sudo make install"
+        ]}
+    ],
     "htop":{"type":"apt", "name":"htop"},
     "chromium":{"type":"apt", "name":"chromium-browser"},
     "git":{"type":"apt", "name":"git"},
