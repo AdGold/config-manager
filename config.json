@@ -62,7 +62,8 @@
         {"type":"apt", "name":"libncurses5-dev"},
         {"type":"git", "name":"tmux/tmux", "cmds":[
             "sh autogen.sh",
-            "./configure && make",
+            "./configure",
+            "make",
             "sudo make install"
         ]}
     ],
