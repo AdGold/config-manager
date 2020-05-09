@@ -21,7 +21,8 @@
     ],
     "latex":[
         {"type":"apt", "name":"texlive"},
-        {"type":"apt", "name":"texlive-extra-utils"}
+        {"type":"apt", "name":"texlive-extra-utils"},
+        {"type":"apt", "name":"texlive-math-extra"}
     ],
     "general-dev":[
         {"type":"apt", "name":"build-essential"},
@@ -29,6 +30,7 @@
     ],
     "zsh":[
         {"type":"apt", "name":"zsh"},
+        {"type":"custom", "name":"oh-my-zsh", "cmds":"sh -c \"$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\""},
         {"type":"git", "name":"zsh-users/zsh-syntax-highlighting"},
         {"type":"git", "name":"bhilburn/powerlevel9k", "dir":"/home/adrian/.oh-my-zsh/themes"}
     ],
@@ -46,7 +48,6 @@
     ],
     "desktop-env":[
         {"type":"apt", "name":"rxvt-unicode-256color"},
-        {"type":"git", "name":"AdGold/IRSerial"},
         {"type":"git", "name":"AdGold/dotfiles", "cmds":"./makesymlinks.sh"}
     ],
     "7z":[
@@ -55,11 +56,6 @@
     ],
     "vlc":{"type":"apt", "name":"vlc"},
     "tmux":[
-        {"type":"apt", "name":"automake"},
-        {"type":"apt", "name":"autotools-dev"},
-        {"type":"apt", "name":"libevent-dev"},
-        {"type":"apt", "name":"pkg-config"},
-        {"type":"apt", "name":"libncurses5-dev"},
         {"type":"git", "name":"tmux/tmux", "cmds":[
             "sh autogen.sh",
             "./configure",
