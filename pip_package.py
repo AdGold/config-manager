@@ -8,7 +8,7 @@ class PipPackage(BasePackage):
         super().__init__(name)
 
     def check_installed(self):
-        installed = run(['pip3', 'list']).decode('utf-8')
+        installed = run(['pip3', 'list'])
         return self.name in installed
 
     def do_update(self):
