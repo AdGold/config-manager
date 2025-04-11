@@ -5,6 +5,8 @@
     ], 
     "vim":[
         {"type":"apt", "name":"vim"},
+        {"type":"apt", "name":"neovim"},
+        {"type":"apt", "name":"vim-gtk3"},
         {"type":"apt", "name":"fonts-powerline"},
         {"type":"git", "name":"Shougo/vimproc.vim", "dir":"/home/adrian/.vim/bundle", "cmds":"make"},
         {"type":"apt", "name":"exuberant-ctags"},
@@ -26,18 +28,17 @@
     ],
     "zsh":[
         {"type":"apt", "name":"zsh"},
-        {"type":"custom", "name":"oh-my-zsh", "cmds":"sh -c \"$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\""},
-        {"type":"git", "name":"zsh-users/zsh-syntax-highlighting"},
-        {"type":"git", "name":"bhilburn/powerlevel9k", "dir":"/home/adrian/.oh-my-zsh/themes"}
+        {"type":"apt", "name":"zoxide"},
+        {"type":"custom", "name":"fzf", "cmds":"git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf; ~/.fzf/install"}
     ],
     "ranger":[
         {"type":"apt", "name":"ranger"},
         {"type":"git", "name":"alexanderjeurissen/ranger_devicons", "dir":"/home/adrian/.config/ranger/plugins"},
-        {"type":"git", "name":"ryanoasis/nerd-fonts", "cmds":["./install JetBrains Mono"]},
         {"type":"apt", "name":"highlight"},
         {"type":"apt", "name":"atool"},
         {"type":"apt", "name":"ffmpegthumbnailer"},
-        {"type":"apt", "name":"mediainfo"}
+        {"type":"apt", "name":"mediainfo"},
+        {"type":"apt", "name":"jq"}
     ],
     "desktop-env":[
         {"type":"apt", "name":"kitty"},
@@ -49,12 +50,18 @@
         {"type":"apt", "name":"p7zip-full"},
         {"type":"apt", "name":"p7zip-rar"}
     ],
+    "esp32":[
+        {"type":"apt", "name":"picocom"},
+        {"type":"pip", "name":"esptool"}
+    ],
     "vlc":{"type":"apt", "name":"vlc"},
     "tmux":{"type":"apt", "name":"tmux"},
+    "tailscale":{"type":"custom", "name":"tailscale", "cmds":"curl -fsSL https://tailscale.com/install.sh | sh"},
+    "eza":{"type":"apt", "name":"eza"},
     "htop":{"type":"apt", "name":"htop"},
     "git":{"type":"apt", "name":"git"},
+    "git":{"type":"apt", "name":"calibre"},
     "dropbox":{ "type":"apt", "name":"nautilus-dropbox"},
     "zathura":{ "type":"apt", "name":"zathura"},
-    "zathura":{ "type":"apt", "name":"zotero"},
     "keepass":{"type":"apt", "name":"keepassx"}
 }
